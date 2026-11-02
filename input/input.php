@@ -8,8 +8,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $servername = "localhost";
     $username = "root";
-    $password = "";          
-    $dbname = "kecamatann";  
+    $password = "";
+    $dbname = "kecamatann";
 
     $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -21,16 +21,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             VALUES ('$kecamatan', '$longitude', '$latitude', $luas, $jumlah_penduduk)";
 
     if ($conn->query($sql) === TRUE) {
-        $conn->close();
-        // Mengalihkan halaman keluar dari folder input ke index.php
-        header("Location: ../index.php");
-        exit();
+        echo "Data baru berhasil ditambahkan";
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
         $conn->close();
     }
-} else {
-    
-    header("Location: ../index.php");
-    exit();
+
+    // header("Location: ../index.php");
+    //     exit();}
 }

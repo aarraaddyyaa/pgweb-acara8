@@ -24,7 +24,7 @@
             let text = "";
             if (isNaN(luas) || luas < 1) {
                 text = "Data luas harus angka dan tidak boleh bernilai negatif";
-                // stop the form submission
+                
                 event.preventDefault();
             }
             document.getElementById("informasi").innerHTML = text;
